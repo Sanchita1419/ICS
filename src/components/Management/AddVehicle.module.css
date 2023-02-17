@@ -1,0 +1,81 @@
+.addSection {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 450px;
+  text-align: center;
+  display: flex;
+  color: white;
+  box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.vehicleInfo {
+  width: 45%;
+  background-color: #114a62;
+  padding: 30px 0;
+  border-right: 5px solid #114a62;
+  border-radius: 10px 0 0 10px;
+}
+.vehicleInfo h3 {
+  /* padding-top: 20px; */
+  font-weight: 400;
+  font-size: 2rem;
+}
+.vehicleInfo p {
+  font-size: 18px;
+}
+.vehicleInfo .icon {
+  font-size: 8em;
+  padding: 20px 0;
+  color: rgba(10, 180, 180, 1);
+}
+
+.addVehicle {
+  width: 70%;
+  padding: 50px 0;
+  background: rgba(255, 255, 255, 0.8);
+  transition: 0.2s;
+  border-radius: 0 10px 10px 0;
+}
+
+.addVehicle h2 {
+  font-weight: 300;
+}
+
+.inputFields {
+  margin: 15px 0;
+  font-size: 16px;
+  padding: 10px;
+  width: 250px;
+  border: none;
+  border-bottom: 1px solid #114a62;
+
+  background: #bbd9e7;
+  color: rgb(22, 22, 22);
+  outline: none;
+  border-radius: 10px;
+}
+
+.addVehicle ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.addButton {
+  background: #114a62;
+  font-size: 18px;
+  color: white;
+  margin-top: 20px;
+  padding: 10px 50px;
+  cursor: pointer;
+  transition: 0.4s;
+  border-radius: 10px;
+  border: none;
+}
+.addButton:hover {
+  background: #114a62;
+  padding: 10px 80px;
+}

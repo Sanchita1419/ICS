@@ -1,0 +1,39 @@
+.management {
+  display: flex;
+  height: 90vh;
+}
+.mSidebar {
+  flex: 2.5;
+  background-color: rgb(243, 243, 243);
+  height: 100vh;
+  padding-top: 80px;
+}
+.mContainer {
+  flex: 9.5;
+}
+
+.mSidebarItem {
+  margin: 30px 30px;
+  padding: 10px 15px;
+  border: 0.2px solid rgb(228, 228, 228);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+  background-color: rgb(228, 228, 228);
+  color: #114a62;
+}
+.mSidebarItem span {
+  margin-left: 5px;
+}
+.mSidebarItem:hover {
+  background-color: #114a62;
+  color: white;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.active {
+  background-color: #114a62;
+  color: white;
+  transform: scale(1.05);
+}

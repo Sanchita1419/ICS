@@ -1,0 +1,27 @@
+.tManage {
+  text-align: center;
+}
+.tMHeader {
+  margin: 15px;
+  display: flex;
+  justify-content: end;
+}
+.tMHeader form {
+  border: 0.2px solid #114a62;
+  border-radius: 20px;
+
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tMHeader input {
+  border: none;
+  margin: 10px 15px;
+  outline: none;
+}
+.tMHeader button {
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}

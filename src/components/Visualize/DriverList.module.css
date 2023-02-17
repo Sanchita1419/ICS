@@ -1,0 +1,71 @@
+.driverList {
+  text-align: center;
+  padding: 0 15px;
+}
+.dLHeader {
+  margin: 15px 0;
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid #c4cdd1;
+}
+.dLHeader form {
+  border: 0.2px solid #114a62;
+  border-radius: 20px;
+  height: 35px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  right: 0;
+}
+.dLHeader input {
+  border: none;
+  margin: 10px 15px;
+  outline: none;
+}
+.dLHeader button {
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+.dTable {
+  margin-top: 25px;
+}
+.driverList table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.driverList td,
+th {
+  padding-left: 8px;
+}
+
+.driverList thead tr {
+  height: 60px;
+  background: #114a62;
+  font-size: 16px;
+  color: white;
+}
+.driverList tbody tr {
+  height: 48px;
+  border-bottom: 1px solid #e3f1d5;
+}
+.driverList .statusButton {
+  border: none;
+  height: 25px;
+  color: #455e60;
+  border-radius: 8px;
+}
+.driverList .suspend {
+  background-color: rgb(245, 149, 149);
+}
+.driverList .active {
+  background-color: rgb(108, 250, 108);
+}

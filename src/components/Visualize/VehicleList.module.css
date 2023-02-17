@@ -1,0 +1,72 @@
+.vehicleList {
+  text-align: center;
+  padding: 0 15px;
+}
+.vLHeader {
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid #c4cdd1;
+  margin: 15px 0;
+}
+
+.vLHeader form {
+  border: 0.2px solid #114a62;
+  border-radius: 20px;
+  height: 35px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  right: 0;
+}
+.vLHeader input {
+  border: none;
+  margin: 10px 15px;
+  outline: none;
+}
+.vLHeader button {
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+.vTable {
+  margin-top: 25px;
+}
+.vehicleList table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.vehicleList td,
+th {
+  padding-left: 8px;
+}
+
+.vehicleList thead tr {
+  height: 60px;
+  background: #114a62;
+  font-size: 16px;
+  color: white;
+}
+.vehicleList tbody tr {
+  height: 48px;
+  border-bottom: 1px solid #e3f1d5;
+}
+.vehicleList .statusButton {
+  border: none;
+  height: 25px;
+  color: #455e60;
+  border-radius: 8px;
+}
+.vehicleList .suspend {
+  background-color: rgb(245, 149, 149);
+}
+.vehicleList .active {
+  background-color: rgb(108, 250, 108);
+}

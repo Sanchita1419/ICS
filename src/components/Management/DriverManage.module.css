@@ -1,0 +1,101 @@
+.dManage {
+  text-align: center;
+  padding: 0 15px;
+}
+.dMHeader {
+  margin: 15px 0;
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid #c4cdd1;
+  justify-content: space-between;
+}
+.dMForm {
+  display: flex;
+}
+.dMHeader .addButton {
+  width: fit-content;
+  border-radius: 20px;
+  border-color: #114a62;
+  background-color: #114a62;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 15px;
+  margin-right: 20px;
+}
+.dMHeader .addButton:hover {
+  transform: scale(1.07);
+}
+.dMHeader form {
+  border: 0.2px solid #114a62;
+  border-radius: 20px;
+  height: 35px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dMHeader input {
+  border: none;
+  margin: 10px 15px;
+  outline: none;
+}
+.dMHeader button {
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+.dMTable {
+  margin-top: 25px;
+}
+.dMTable table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.dManage td,
+th {
+  padding-left: 8px;
+}
+
+.dManage thead tr {
+  height: 60px;
+  background: #114a62;
+  font-size: 16px;
+  color: white;
+}
+.dManage tbody tr {
+  height: 48px;
+  border-bottom: 1px solid #e3f1d5;
+}
+.dManage .statusButton {
+  border: none;
+  height: 25px;
+  color: #455e60;
+  border-radius: 8px;
+}
+.dManage .suspend {
+  background-color: rgb(245, 149, 149);
+}
+.dManage .active {
+  background-color: rgb(108, 250, 108);
+}
+.dMTable .iconButton {
+  height: 30px;
+  width: 30px;
+  padding: 3px;
+  margin-left: 10px;
+  background-color: rgb(228, 228, 228);
+  /* color: white; */
+  border: none;
+  border-radius: 10px;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); */
+}
+.dMTable .iconButton:hover {
+  cursor: pointer;
+  transform: scale(1.07);
+}

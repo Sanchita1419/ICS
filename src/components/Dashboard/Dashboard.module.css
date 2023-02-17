@@ -1,0 +1,51 @@
+.dbHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dbCardContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 15px;
+}
+.dbCard {
+  min-width: 180px;
+  width: fit-content;
+  height: 120px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  display: flex;
+  padding: 12px;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.3s;
+}
+.dbCard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+}
+.dbCard .name {
+  color: #114a62;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.dbCard .value {
+  color: #f6932f;
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.dbGraphContainer {
+  height: 50vh;
+  border: 0.5px solid gray;
+  border-radius: 20px;
+  margin: 25px 15px 0 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

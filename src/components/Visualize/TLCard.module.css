@@ -1,0 +1,28 @@
+.tLCard {
+  height: 250px;
+  width: auto;
+  border-bottom: 0.5px solid #cbcecf;
+  padding: 15px;
+}
+.tLCardHeading {
+  text-align: center;
+  color: #114a62;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.tLCardBody {
+  display: flex;
+  height: 100%;
+}
+.tLCardImg img {
+  height: 200px;
+}
+.tLCardDetail {
+  margin-top: 25px;
+}
+.tLPlaceA {
+  height: 100px;
+}
+.tLPlaceB {
+  height: 100px;
+}

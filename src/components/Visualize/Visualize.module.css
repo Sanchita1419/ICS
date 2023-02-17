@@ -1,0 +1,45 @@
+.visualize {
+  display: flex;
+  height: 90vh;
+  overflow-y: hidden;
+}
+.vSidebar {
+  flex: 2.5;
+  background-color: rgb(243, 243, 243);
+  min-height: 100%;
+  padding-top: 80px;
+}
+.vContainer {
+  flex: 9.5;
+}
+.vSidebarItem {
+  margin: 30px 30px;
+  padding: 10px 15px;
+  border: 0.2px solid rgb(228, 228, 228);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+  background-color: rgb(228, 228, 228);
+  color: #114a62;
+}
+.vSidebarItem span {
+  margin-left: 5px;
+}
+.vSidebarItem:hover {
+  background-color: #114a62;
+  color: white;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.vSidebarActiveItem {
+  background-color: #114a62;
+  color: white;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.active {
+  background-color: #114a62;
+  color: white;
+  transform: scale(1.05);
+}

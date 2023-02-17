@@ -1,0 +1,119 @@
+.cManage {
+  text-align: center;
+  padding: 0 15px;
+}
+
+.cMHeader {
+  margin: 15px 0;
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid #c4cdd1;
+  justify-content: center;
+}
+.cMForm {
+  display: flex;
+  position: absolute;
+  right: 0;
+}
+.cMHeader .addButton {
+  width: fit-content;
+  border-radius: 20px;
+  border-color: #114a62;
+  background-color: #114a62;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 15px;
+  margin-right: 20px;
+}
+.cMHeader .addButton:hover {
+  transform: scale(1.07);
+}
+.cMHeader form {
+  border: 0.2px solid #114a62;
+  border-radius: 20px;
+  height: 35px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cMHeader input {
+  border: none;
+  margin: 10px 15px;
+  outline: none;
+}
+
+.cMHeader button {
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+.cMTable {
+  margin-top: 25px;
+}
+.cMTable table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.cManage td,
+th {
+  padding-left: 8px;
+}
+
+.cManage thead tr {
+  height: 60px;
+  background: #114a62;
+  font-size: 16px;
+  color: white;
+}
+.cManage tbody tr {
+  height: 48px;
+  border-bottom: 1px solid #e3f1d5;
+}
+.cManage .statusButton {
+  border: none;
+  height: 25px;
+  color: #455e60;
+  border-radius: 8px;
+}
+.cManage .suspend {
+  background-color: rgb(245, 149, 149);
+}
+.cManage .active {
+  background-color: rgb(108, 250, 108);
+}
+.cMTable .iconButton {
+  height: 30px;
+  width: 30px;
+  padding: 3px;
+  margin-left: 10px;
+  background-color: rgb(228, 228, 228);
+  /* color: white; */
+  border: none;
+  border-radius: 10px;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); */
+}
+.cMTable .iconButton:hover {
+  cursor: pointer;
+  transform: scale(1.07);
+}
+/* .cMForm {
+  margin-top: 25px;
+  width: 100%;
+  display: flex;
+}
+.cMFormLeft {
+  flex: 5;
+  background-color: #114a62;
+  color: white;
+}
+.cMFormRight {
+  flex: 7;
+  color: #114a62;
+} */
