@@ -68,6 +68,7 @@ const Header = () => {
           style={({ isActive }) => ({
             color: isActive ? "rgb(231, 231, 231)" : "white",
             borderBottom: isActive ? "2px solid white" : "none",
+            pointerEvents: "none",
           })}
           className={classes.navLink}
         >
@@ -79,6 +80,7 @@ const Header = () => {
           style={({ isActive }) => ({
             color: isActive ? "rgb(231, 231, 231)" : "white",
             borderBottom: isActive ? "2px solid white" : "none",
+            pointerEvents: "none",
           })}
           className={classes.navLink}
         >

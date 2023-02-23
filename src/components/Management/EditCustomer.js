@@ -1,19 +1,19 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Input from "../UI/Input/Input";
 import Modal from "../UI/Modal/Modal";
 import SelectBox from "../UI/Select/SelectBox";
-import classes from "./AddCustomer.module.css";
+import classes from "./EditCustomer.module.css";
 
-const AddCustomer = (props) => {
-  const options = [
-    { value: "standard", label: "Standard" },
-    { value: "Gold", label: "Gold" },
-    { value: "Premium", label: "Premium" },
-  ];
+const EditCustomer = (props) => {
+  const navigate = useNavigate();
+  const cancelHandler = () => {
+    navigate("/manage");
+  };
   return (
-    <Modal onClose={props.onClose}>
-      <div className={classes.addCustomer}>
-        <h3>Add Customer</h3>
+    <Modal>
+      <div className={classes.editCustomer}>
+        <h3>Edit Customer</h3>
         <form>
           <Input label="Customer Id" name="customerId" />
           <Input label="Customer Name" name="customerName" />
@@ -26,7 +26,7 @@ const AddCustomer = (props) => {
           <Input label="GSTIN Number" name="gstinNo" />
 
           <div className={classes.buttonContainer}>
-            <button onClick={props.onClose}>Cancel</button>
+            <button onClick={cancelHandler}>Cancel</button>
             <button>Save</button>
           </div>
         </form>
@@ -35,4 +35,4 @@ const AddCustomer = (props) => {
   );
 };
 
-export default AddCustomer;
+export default EditCustomer;

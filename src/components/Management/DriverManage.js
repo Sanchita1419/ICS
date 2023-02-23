@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./DriverManage.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 import EditRoundedIcon from "@mui/icons-material/EditRounded";
@@ -6,6 +6,7 @@ import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import CancelIcon from "@mui/icons-material/Cancel";
 import { Link, useNavigate } from "react-router-dom";
+import AddDriver from "./AddDriver";
 const driverData = [
   {
     no: 1,
@@ -36,10 +37,15 @@ const driverData = [
   },
 ];
 const DriverManage = () => {
-  const navigate = useNavigate();
+  const [showAddForm, setShowAddForm] = useState(false);
   const handleAddDriver = () => {
-    navigate("/manage/driver");
+    setShowAddForm(true);
+    // navigate("/manage/customer");
   };
+  const hideAddHandler = () => {
+    setShowAddForm(false);
+  };
+
   return (
     <div className={classes.dManage}>
       <div className={classes.dMHeader}>
@@ -117,6 +123,7 @@ const DriverManage = () => {
           </tbody>
         </table>
       </div>
+      {showAddForm && <AddDriver onClose={hideAddHandler} />}
     </div>
   );
 };

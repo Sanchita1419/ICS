@@ -4,6 +4,7 @@ import "./App.css";
 import AddDriverPage from "./pages/AddDriverPage";
 import AddVehiclePage from "./pages/AddVehiclePage";
 import DashboardPage from "./pages/DashboardPage";
+import EditCustomerPage from "./pages/EditCustomerPage";
 import EditDriverPage from "./pages/EditDriverPage";
 import EditVehiclePage from "./pages/EditVehiclePage";
 import LoginPage from "./pages/LoginPage";
@@ -23,11 +24,11 @@ function App() {
         />
         <Route path="/visualize" element={<VisualizePage />} />
         <Route path="/manage" element={<ManagementPage />} />
-        <Route path="/manage/driver" element={<AddDriverPage />} />
+        {/* <Route path="/manage/driver" element={<AddDriverPage />} /> */}
         <Route exact path="/manage/driver/:id" element={<EditDriverPage />} />
-        <Route path="/manage/vehicle" element={<AddVehiclePage />} />
+        {/* <Route path="/manage/vehicle" element={<AddVehiclePage />} /> */}
         <Route path="/manage/vehicle/:id" element={<EditVehiclePage />} />
-
+        <Route path="/manage/customer/:id" element={<EditCustomerPage />} />
         <Route path="/subscription" element={<SubscriptionPage />} />
         <Route path="/reports" element={<ReportsPage />} />
       </Routes>

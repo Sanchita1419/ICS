@@ -4,6 +4,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import EditRoundedIcon from "@mui/icons-material/EditRounded";
 import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
 import { Link, useNavigate } from "react-router-dom";
+import AddVehicle from "./AddVehicle";
 const vehicleData = [
   {
     no: 1,
@@ -29,10 +30,15 @@ const vehicleData = [
 ];
 
 const VehicleManage = () => {
-  const navigate = useNavigate();
+  const [showAddForm, setShowAddForm] = useState(false);
   const handleAddVehicle = () => {
-    navigate("/manage/vehicle");
+    setShowAddForm(true);
+    // navigate("/manage/customer");
   };
+  const hideAddHandler = () => {
+    setShowAddForm(false);
+  };
+
   // const handleEditVehicle = (regNo) => {
   //   navigate(`/manage/vehicle/${regNo}`);
   // };
@@ -107,6 +113,7 @@ const VehicleManage = () => {
           </tbody>
         </table>
       </div>
+      {showAddForm && <AddVehicle onClose={hideAddHandler} />}
     </div>
   );
 };

@@ -1,0 +1,73 @@
+.customerList {
+  text-align: center;
+  padding: 0 15px;
+}
+.cLHeader {
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  border-bottom: 1px solid #c4cdd1;
+}
+.cLHeader form {
+  border: 0.2px solid #114a62;
+  border-radius: 20px;
+  height: 35px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  right: 0;
+}
+.cLHeader input {
+  border: none;
+  margin: 10px 15px;
+  outline: none;
+}
+.cLHeader button {
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.cLTable {
+  margin-top: 25px;
+}
+.cLTable table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.cLTable td,
+th {
+  padding-left: 8px;
+}
+
+.cLTable thead tr {
+  height: 60px;
+  background: #114a62;
+  font-size: 16px;
+  color: white;
+}
+.cLTable tbody tr {
+  height: 48px;
+  border-bottom: 1px solid #e3f1d5;
+}
+.cLTable .statusButton {
+  border: none;
+  height: 25px;
+  color: #455e60;
+  border-radius: 8px;
+}
+.cLTable .suspend {
+  background-color: rgb(245, 149, 149);
+}
+.cLTable .active {
+  background-color: rgb(108, 250, 108);
+}

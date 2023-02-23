@@ -1,19 +1,20 @@
-.addVehicle {
+.editCustomer {
 }
-.addVehicle h3 {
+
+.editCustomer h3 {
   text-align: center;
   font-size: 2rem;
   margin: 5px 0;
 }
-.addVehicle form {
+.editCustomer form {
   margin: 15px;
 }
-.addVehicle form .buttonContainer {
+.editCustomer form .buttonContainer {
   margin: 15px;
   display: flex;
   justify-content: space-between;
 }
-.addVehicle form .buttonContainer button {
+.editCustomer form .buttonContainer button {
   padding: 10px 15px;
   width: 100px;
   font-size: 1rem;
@@ -23,6 +24,6 @@
   color: white;
   cursor: pointer;
 }
-.addVehicle form .buttonContainer button:hover {
+.editCustomer form .buttonContainer button:hover {
   transform: scale(1.05);
 }

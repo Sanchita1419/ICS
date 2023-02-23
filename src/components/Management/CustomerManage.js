@@ -12,6 +12,7 @@ const customerData = [
     customerName: "Customer 1",
     servicePackage: "Standard",
     address: "Address1",
+    person: "Person 1",
     contact: 987654321,
     gstinNo: 345678798,
     status: "Active",
@@ -22,6 +23,7 @@ const customerData = [
     customerName: "Customer 2",
     servicePackage: "Standard",
     address: "Address2",
+    person: "Person 2",
     contact: 987654321,
     gstinNo: 345678798,
     status: "Suspended",
@@ -32,6 +34,7 @@ const customerData = [
     customerName: "Customer 3",
     servicePackage: "Standard",
     address: "Address3",
+    person: "Person 3",
     contact: 987654321,
     gstinNo: 345678798,
     status: "Active",
@@ -79,7 +82,8 @@ const CustomerManage = () => {
                 <th>Customer name</th>
                 <th>Service package</th>
                 <th>Address</th>
-                <th>Contact</th>
+                <th>Contact person</th>
+                <th>Contact No.</th>
                 <th>GSTIN No</th>
                 <th>Status</th>
                 <th>Actions</th>
@@ -93,6 +97,7 @@ const CustomerManage = () => {
                   <td>{c.customerName}</td>
                   <td>{c.servicePackage}</td>
                   <td>{c.address}</td>
+                  <td>{c.person}</td>
                   <td>{c.contact}</td>
                   <td>{c.gstinNo}</td>
 
