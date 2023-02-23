@@ -20,6 +20,7 @@ const Header = () => {
   const handleLogout = () => {
     dispatch(authActions.logout());
     navigate("/");
+    window.location.reload();
   };
   return (
     <div className={classes.nav}>

@@ -27,3 +27,29 @@
 .addCustomer form .buttonContainer button:hover {
   transform: scale(1.05);
 }
+.inputBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 5px 15px;
+  /* display: flex;
+  flex-direction: column;
+  height: 20px;
+  width: 70%; */
+}
+.inputBox label {
+}
+.inputBox input {
+  margin: 5px 0;
+  padding: 8px;
+  background-color: rgb(219, 219, 219);
+  border-radius: 10px;
+  border: none;
+  color: #114a62;
+}
+.inputBox input:focus {
+  outline: none;
+}
+.selectBox {
+  margin: 0 15px;
+}

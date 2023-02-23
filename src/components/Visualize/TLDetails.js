@@ -17,7 +17,7 @@ const TLDetails = () => {
           </div>
           <div className={classes.vehicleDetail}>
             <p>Vehicle Type : Truck</p>
-            <p>Registration No: 76899987</p>
+            <p>Registration No: KA15YT8907</p>
           </div>
         </div>
       </div>

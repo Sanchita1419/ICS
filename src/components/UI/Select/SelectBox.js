@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Select from "react-select";
 import classes from "./SelectBox.module.css";
 const options = [
@@ -7,6 +7,11 @@ const options = [
   { value: "Premium", label: "Premium" },
 ];
 const SelectBox = (props) => {
+  const [selected, setSelected] = useState("");
+  const handleChange = (selectedOption) => {
+    setSelected(selectedOption.value);
+  };
+  console.log(selected);
   return (
     <div className={classes.selectBox}>
       <label>Service Package</label>
@@ -26,6 +31,7 @@ const SelectBox = (props) => {
           }),
         }}
         options={options}
+        onChange={handleChange}
       />
     </div>
   );
