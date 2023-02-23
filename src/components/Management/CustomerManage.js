@@ -19,7 +19,7 @@ const customerData = [
   },
   {
     no: 2,
-    customerId: 12345,
+    customerId: 12346,
     customerName: "Customer 2",
     servicePackage: "Standard",
     address: "Address2",
@@ -30,7 +30,7 @@ const customerData = [
   },
   {
     no: 3,
-    customerId: 12345,
+    customerId: 12347,
     customerName: "Customer 3",
     servicePackage: "Standard",
     address: "Address3",
@@ -51,9 +51,9 @@ const CustomerManage = () => {
   const hideAddHandler = () => {
     setShowAddForm(false);
   };
-  // const handleEditVehicle = (regNo) => {
-  //   navigate(`/manage/vehicle/${regNo}`);
-  // };
+  const deleteCustomerHandler = (id) => {
+    const customers = customerData.filter((c) => c.customerId === id);
+  };
   return (
     <>
       <div className={classes.cManage}>
@@ -126,6 +126,7 @@ const CustomerManage = () => {
                     <button
                       style={{ color: "#DC0000" }}
                       className={classes.iconButton}
+                      onClick={() => deleteCustomerHandler(c.customerId)}
                     >
                       <DeleteRoundedIcon />
                     </button>

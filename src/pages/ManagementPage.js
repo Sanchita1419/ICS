@@ -6,6 +6,7 @@ import ManageAdmin from "../components/Management/ManageAdmin";
 
 const ManagementPage = () => {
   const isAdmin = useSelector((state) => state.auth.isAdmin);
+  console.log(isAdmin);
   return (
     <>
       <Header />
