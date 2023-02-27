@@ -4,6 +4,7 @@ import Modal from "../UI/Modal/Modal";
 import SelectBox from "../UI/Select/SelectBox";
 import Select from "react-select";
 import classes from "./AddCustomer.module.css";
+import { useNavigate } from "react-router-dom";
 
 const AddCustomer = (props) => {
   const [selected, setSelected] = useState("");
@@ -14,6 +15,7 @@ const AddCustomer = (props) => {
   const personInputRef = useRef();
   const contactInputRef = useRef();
   const gstinInputRef = useRef();
+  const navigate = useNavigate();
   const options = [
     { value: "Standard", label: "Standard" },
     { value: "Gold", label: "Gold" },
@@ -48,6 +50,7 @@ const AddCustomer = (props) => {
     contactInputRef.current.value = "";
     gstinInputRef.current.value = "";
     setSelected("");
+    navigate("/manage-admin");
   };
 
   console.log(selected);

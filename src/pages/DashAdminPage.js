@@ -1,11 +1,11 @@
 import React from "react";
-import Dashboard from "../components/Dashboard/Dashboard";
+import DashAdmin from "../components/Dashboard/DashAdmin";
 import Header from "../components/Header/Header";
 const DashboardPage = () => {
   return (
     <>
       <Header />
-      <Dashboard />
+      <DashAdmin />
     </>
   );
 };

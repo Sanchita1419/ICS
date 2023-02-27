@@ -3,6 +3,7 @@
   width: auto;
   border-bottom: 0.5px solid #cbcecf;
   padding: 15px;
+  cursor: pointer;
 }
 .tLCardHeading {
   text-align: center;
@@ -12,17 +13,22 @@
 }
 .tLCardBody {
   display: flex;
-  height: 100%;
+  height: 65%;
 }
 .tLCardImg img {
-  height: 200px;
+  height: 180px;
 }
 .tLCardDetail {
   margin-top: 25px;
 }
 .tLPlaceA {
-  height: 100px;
+  height: 90px;
 }
 .tLPlaceB {
-  height: 100px;
+  height: 30px;
+}
+.tLCardFooter {
+  margin-top: 25px;
+  text-align: center;
+  color: #114a62;
 }

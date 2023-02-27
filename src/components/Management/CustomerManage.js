@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./CustomerManage.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 import EditRoundedIcon from "@mui/icons-material/EditRounded";
@@ -42,7 +42,10 @@ const customerData = [
 ];
 
 const CustomerManage = () => {
+  const [filteredData, setFilteredData] = useState(customerData);
+  const [searchValue, setSearchValue] = useState("");
   const [showAddForm, setShowAddForm] = useState(false);
+
   const navigate = useNavigate();
   const handleAddCustomer = () => {
     setShowAddForm(true);
@@ -54,6 +57,17 @@ const CustomerManage = () => {
   const deleteCustomerHandler = (id) => {
     const customers = customerData.filter((c) => c.customerId === id);
   };
+  const searchHandler = (e) => {
+    setSearchValue(e.target.value);
+  };
+
+  useEffect(() => {
+    const filteredCustomers = customerData.filter((value) =>
+      value.customerName.toLowerCase().includes(searchValue.toLowerCase())
+    );
+    setFilteredData(filteredCustomers);
+  }, [searchValue]);
+
   return (
     <>
       <div className={classes.cManage}>
@@ -66,10 +80,15 @@ const CustomerManage = () => {
               </button>
             </div>
             <form>
-              <input type="text" placeholder="Search By Name" name="search" />
-              <button type="submit">
-                <SearchIcon />
-              </button>
+              <input
+                type="text"
+                placeholder="Search By Name"
+                name="search"
+                onChange={searchHandler}
+              />
+              {/* <button type="submit">
+              </button> */}
+              <SearchIcon style={{ color: "#114A62", marginRight: "5px" }} />
             </form>
           </div>
         </div>
@@ -90,7 +109,7 @@ const CustomerManage = () => {
               </tr>
             </thead>
             <tbody>
-              {customerData.map((c) => (
+              {filteredData.map((c) => (
                 <tr key={c.no}>
                   <td>{c.no}</td>
                   <td>{c.customerId}</td>
@@ -114,7 +133,7 @@ const CustomerManage = () => {
                     </button>
                   </td>
                   <td>
-                    <Link to={`/manage/customer/${c.customerId}`}>
+                    <Link to={`/manage-admin/customer/${c.customerId}`}>
                       <button
                         style={{ color: "#114a62" }}
                         className={classes.iconButton}

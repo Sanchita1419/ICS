@@ -39,6 +39,8 @@ import { axiosInstance } from "../../config";
 // ];
 const CustomerList = () => {
   const [customerData, setCustomerData] = useState([]);
+  const [filteredData, setFilteredData] = useState(customerData);
+  const [searchValue, setSearchValue] = useState("");
   useEffect(() => {
     const fetchData = async () => {
       const response = await axiosInstance.get("/customer");
@@ -47,6 +49,16 @@ const CustomerList = () => {
     };
     fetchData();
   }, []);
+  const searchHandler = (e) => {
+    setSearchValue(e.target.value);
+  };
+
+  useEffect(() => {
+    const filteredCustomers = customerData.filter((value) =>
+      value.customerName.toLowerCase().includes(searchValue.toLowerCase())
+    );
+    setFilteredData(filteredCustomers);
+  }, [searchValue, customerData]);
   console.log("Customer", customerData);
   return (
     <div className={classes.customerList}>
@@ -57,10 +69,11 @@ const CustomerList = () => {
             type="text"
             placeholder="Search By Customer Id"
             name="search"
+            onChange={searchHandler}
           />
-          <button type="submit">
-            <SearchIcon />
-          </button>
+          {/* <button type="submit">
+          </button> */}
+          <SearchIcon style={{ color: "#114A62", marginRight: "5px" }} />
         </form>
       </div>
       <div className={classes.cLTable}>
@@ -79,7 +92,7 @@ const CustomerList = () => {
             </tr>
           </thead>
           <tbody>
-            {customerData.map((c) => (
+            {filteredData.map((c) => (
               <tr key={c.no}>
                 <td>{c.no}</td>
                 <td>{c.customerId}</td>

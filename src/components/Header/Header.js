@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import classes from "./Header.module.css";
 import SearchIcon from "@mui/icons-material/Search";
@@ -12,9 +12,10 @@ import BarChartIcon from "@mui/icons-material/BarChart";
 import PieChartIcon from "@mui/icons-material/PieChart";
 import StorageIcon from "@mui/icons-material/Storage";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "../../redux/authRedux";
 const Header = () => {
+  const isAdmin = useSelector((state) => state.auth.isAdmin);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleLogout = () => {
@@ -22,6 +23,7 @@ const Header = () => {
     navigate("/");
     window.location.reload();
   };
+  console.log("IsAdmin", isAdmin);
   return (
     <div className={classes.nav}>
       <div className={classes.left}>
@@ -43,7 +45,7 @@ const Header = () => {
           Dashboard
         </NavLink>
         <NavLink
-          to="/visualize"
+          to={isAdmin ? "/visualize-admin" : "/visualize"}
           style={({ isActive }) => ({
             color: isActive ? "rgb(231, 231, 231)" : "white",
             borderBottom: isActive ? "2px solid white" : "none",
@@ -54,7 +56,7 @@ const Header = () => {
           Visualization
         </NavLink>
         <NavLink
-          to="/manage"
+          to={isAdmin ? "/manage-admin" : "/manage"}
           style={({ isActive }) => ({
             color: isActive ? "rgb(231, 231, 231)" : "white",
             borderBottom: isActive ? "2px solid white" : "none",

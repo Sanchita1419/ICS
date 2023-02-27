@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./DriverManage.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 import EditRoundedIcon from "@mui/icons-material/EditRounded";
@@ -13,7 +13,7 @@ const driverData = [
     name: "Driver 1",
     age: 30,
     gender: "Male",
-    license: 7889787,
+    license: "7889787",
     registration: "Complete",
     status: "Active",
   },
@@ -22,7 +22,7 @@ const driverData = [
     name: "Driver 2",
     age: 34,
     gender: "Male",
-    license: 7845787,
+    license: "7845787",
     registration: "Incomplete",
     status: "Suspended",
   },
@@ -31,13 +31,16 @@ const driverData = [
     name: "Driver 3",
     age: 40,
     gender: "Male",
-    license: 7645717,
+    license: "7645717",
     registration: "Complete",
     status: "Suspended",
   },
 ];
 const DriverManage = () => {
+  const [filteredData, setFilteredData] = useState(driverData);
+  const [searchValue, setSearchValue] = useState("");
   const [showAddForm, setShowAddForm] = useState(false);
+
   const handleAddDriver = () => {
     setShowAddForm(true);
     // navigate("/manage/customer");
@@ -45,7 +48,15 @@ const DriverManage = () => {
   const hideAddHandler = () => {
     setShowAddForm(false);
   };
-
+  const searchHandler = (e) => {
+    setSearchValue(e.target.value);
+  };
+  useEffect(() => {
+    const filteredDrivers = driverData.filter((value) =>
+      value.license.includes(searchValue)
+    );
+    setFilteredData(filteredDrivers);
+  }, [searchValue]);
   return (
     <div className={classes.dManage}>
       <div className={classes.dMHeader}>
@@ -61,10 +72,11 @@ const DriverManage = () => {
               type="text"
               placeholder="Search By license no"
               name="search"
+              onChange={searchHandler}
             />
-            <button type="submit">
-              <SearchIcon />
-            </button>
+            <SearchIcon style={{ color: "#114A62", marginRight: "5px" }} />
+            {/* <button type="submit">
+            </button> */}
           </form>
         </div>
       </div>
@@ -83,7 +95,7 @@ const DriverManage = () => {
             </tr>
           </thead>
           <tbody>
-            {driverData.map((d) => (
+            {filteredData.map((d) => (
               <tr key={d.no}>
                 <td>{d.no}</td>
                 <td>{d.name}</td>

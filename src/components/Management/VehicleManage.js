@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./VehicleManage.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 import EditRoundedIcon from "@mui/icons-material/EditRounded";
@@ -58,6 +58,8 @@ const vehicleData = [
 ];
 
 const VehicleManage = () => {
+  const [filteredData, setFilteredData] = useState(vehicleData);
+  const [searchValue, setSearchValue] = useState("");
   const [showAddForm, setShowAddForm] = useState(false);
   const handleAddVehicle = () => {
     setShowAddForm(true);
@@ -70,6 +72,15 @@ const VehicleManage = () => {
   // const handleEditVehicle = (regNo) => {
   //   navigate(`/manage/vehicle/${regNo}`);
   // };
+  const searchHandler = (e) => {
+    setSearchValue(e.target.value);
+  };
+  useEffect(() => {
+    const filteredVehicles = vehicleData.filter((value) =>
+      value.regNo.toLowerCase().includes(searchValue.toLowerCase())
+    );
+    setFilteredData(filteredVehicles);
+  }, [searchValue]);
   return (
     <div className={classes.vManage}>
       <div className={classes.vMHeader}>
@@ -81,10 +92,15 @@ const VehicleManage = () => {
             </button>
           </div>
           <form>
-            <input type="text" placeholder="Search By Reg No." name="search" />
-            <button type="submit">
-              <SearchIcon />
-            </button>
+            <input
+              type="text"
+              placeholder="Search By Reg No."
+              name="search"
+              onChange={searchHandler}
+            />
+            <SearchIcon style={{ color: "#114A62", marginRight: "5px" }} />
+            {/* <button type="submit">
+            </button> */}
           </form>
         </div>
       </div>
@@ -101,7 +117,7 @@ const VehicleManage = () => {
             </tr>
           </thead>
           <tbody>
-            {vehicleData.map((v) => (
+            {filteredData.map((v) => (
               <tr key={v.no}>
                 <td>{v.no}</td>
                 <td>{v.regNo}</td>

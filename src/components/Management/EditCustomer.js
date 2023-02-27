@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Input from "../UI/Input/Input";
 import Modal from "../UI/Modal/Modal";
-import SelectBox from "../UI/Select/SelectBox";
 import Select from "react-select";
 import classes from "./EditCustomer.module.css";
 const customerData = [
@@ -41,18 +39,20 @@ const customerData = [
   },
 ];
 const EditCustomer = (props) => {
-  const [name, setName] = useState("");
-  const [servicePackage, setServicePackage] = useState("");
-  const [address, setAddress] = useState("");
-  const [person, setPerson] = useState("");
-  const [contact, setContact] = useState("");
-  const [gstin, setGstin] = useState("");
-  const navigate = useNavigate();
   const cId = useParams();
-
   const customers = customerData.filter((c) => {
     return c.customerId === cId.id;
   });
+  const [name, setName] = useState(customers[0].customerName);
+  const [servicePackage, setServicePackage] = useState(
+    customers[0].servicePackage
+  );
+  const [address, setAddress] = useState(customers[0].address);
+  const [person, setPerson] = useState(customers[0].person);
+  const [contact, setContact] = useState(customers[0].contact);
+  const [gstin, setGstin] = useState(customers[0].gstinNo);
+  const navigate = useNavigate();
+
   const [status, setStatus] = useState(customers[0].status);
 
   const nameChangeHandler = (e) => {
@@ -85,7 +85,7 @@ const EditCustomer = (props) => {
     console.log(name, servicePackage, address, person, contact, gstin, status);
   };
   const cancelHandler = () => {
-    navigate("/manage");
+    navigate("/manage-admin");
   };
   const options = [
     { value: "Standard", label: "Standard" },

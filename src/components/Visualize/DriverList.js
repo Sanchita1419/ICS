@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import classes from "./DriverList.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 const driverData = [
@@ -7,7 +8,7 @@ const driverData = [
     name: "Driver 1",
     age: 30,
     gender: "Male",
-    license: 7889787,
+    license: "7889787",
     registration: "Complete",
     status: "Active",
   },
@@ -16,7 +17,7 @@ const driverData = [
     name: "Driver 2",
     age: 34,
     gender: "Male",
-    license: 7845787,
+    license: "7845787",
     registration: "Incomplete",
     status: "Suspended",
   },
@@ -25,12 +26,24 @@ const driverData = [
     name: "Driver 3",
     age: 40,
     gender: "Male",
-    license: 7645717,
+    license: "7645717",
     registration: "Complete",
     status: "Suspended",
   },
 ];
 const DriverList = () => {
+  const [filteredData, setFilteredData] = useState(driverData);
+  const [searchValue, setSearchValue] = useState("");
+  const searchHandler = (e) => {
+    setSearchValue(e.target.value);
+  };
+
+  useEffect(() => {
+    const filteredCustomers = driverData.filter((value) =>
+      value.name.toLowerCase().includes(searchValue.toLowerCase())
+    );
+    setFilteredData(filteredCustomers);
+  }, [searchValue]);
   return (
     <div className={classes.driverList}>
       <div className={classes.dLHeader}>
@@ -40,10 +53,11 @@ const DriverList = () => {
             type="text"
             placeholder="Search By driver name"
             name="search"
+            onChange={searchHandler}
           />
-          <button type="submit">
-            <SearchIcon />
-          </button>
+          <SearchIcon style={{ color: "#114A62", marginRight: "5px" }} />
+          {/* <button type="submit">
+          </button> */}
         </form>
       </div>
       <div className={classes.dTable}>
@@ -60,7 +74,7 @@ const DriverList = () => {
             </tr>
           </thead>
           <tbody>
-            {driverData.map((d) => (
+            {filteredData.map((d) => (
               <tr key={d.no}>
                 <td>{d.no}</td>
                 <td>{d.name}</td>
@@ -90,23 +104,3 @@ const DriverList = () => {
 };
 
 export default DriverList;
-{
-  /* <tr>
-              <td>1</td>
-              <td>Driver 1</td>
-              <td>30</td>
-              <td>Male</td>
-              <td>7889787</td>
-              <td>Complete</td>
-              <td>Active</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Driver 2</td>
-              <td>30</td>
-              <td>Male</td>
-              <td>7889787</td>
-              <td>Incomplete</td>
-              <td>Active</td>
-            </tr> */
-}

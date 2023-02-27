@@ -1,12 +1,12 @@
 import React from "react";
-import Visualize from "../components/Visualize/Visualize";
 import Header from "../components/Header/Header";
+import VisAdmin from "../components/Visualize/VisAdmin";
 
 const VisualizePage = () => {
   return (
     <>
       <Header />
-      <Visualize />
+      <VisAdmin />
     </>
   );
 };

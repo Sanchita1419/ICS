@@ -1,30 +1,69 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./VehicleList.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 const vehicleData = [
   {
     no: 1,
-    regNo: 12345678,
+    regNo: "KA19EQ2893",
     vehicleType: "Truck",
     mobileNo: "9876543210",
     status: "Active",
   },
   {
     no: 2,
-    regNo: 12346848,
+    regNo: "KA19YT2845",
     vehicleType: "Truck",
     mobileNo: "9675432210",
     status: "Suspended",
   },
   {
     no: 3,
-    regNo: 18345578,
+    regNo: "KA19KQ5638",
     vehicleType: "Truck",
     mobileNo: "9846592110",
     status: "Active",
   },
+  {
+    no: 4,
+    regNo: "KA19KY5634",
+    vehicleType: "Truck",
+    mobileNo: "9752374098",
+    status: "Active",
+  },
+  {
+    no: 5,
+    regNo: "KA19ER9035",
+    vehicleType: "Truck",
+    mobileNo: "9752356392",
+    status: "Suspended",
+  },
+  {
+    no: 6,
+    regNo: "KA19ER7309",
+    vehicleType: "Truck",
+    mobileNo: "9756309098",
+    status: "Active",
+  },
+  {
+    no: 7,
+    regNo: "KA19WS8934",
+    vehicleType: "Truck",
+    mobileNo: "9752345097",
+    status: "Active",
+  },
 ];
 const VehicleList = () => {
+  const [filteredData, setFilteredData] = useState(vehicleData);
+  const [searchValue, setSearchValue] = useState("");
+  const searchHandler = (e) => {
+    setSearchValue(e.target.value);
+  };
+  useEffect(() => {
+    const filteredVehicles = vehicleData.filter((value) =>
+      value.regNo.toLowerCase().includes(searchValue.toLowerCase())
+    );
+    setFilteredData(filteredVehicles);
+  }, [searchValue]);
   return (
     <div className={classes.vehicleList}>
       <div className={classes.vLHeader}>
@@ -35,10 +74,11 @@ const VehicleList = () => {
               type="text"
               placeholder="Search By Registration no."
               name="search"
+              onChange={searchHandler}
             />
-            <button type="submit">
-              <SearchIcon />
-            </button>
+            <SearchIcon style={{ color: "#114A62", marginRight: "5px" }} />
+            {/* <button type="submit">
+            </button> */}
           </form>
         </div>
       </div>
@@ -63,7 +103,7 @@ const VehicleList = () => {
             </tr>
           </thead>
           <tbody>
-            {vehicleData.map((v) => (
+            {filteredData.map((v) => (
               <tr key={v.no}>
                 <td>{v.no}</td>
                 <td>{v.regNo}</td>

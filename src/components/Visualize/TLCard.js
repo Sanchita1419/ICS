@@ -18,6 +18,9 @@ const TLCard = () => {
           <div className={classes.tLPlaceB}>Place B</div>
         </div>
       </div>
+      <div className={classes.tLCardFooter}>
+        <p>Trip Id : 1234569</p>
+      </div>
     </div>
   );
 };
