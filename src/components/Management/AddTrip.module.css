@@ -9,6 +9,15 @@
 .addTrip form {
   margin: 15px;
 }
+.addTrip form input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.addTrip form input[type="number"] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
 .addTrip form .buttonContainer {
   margin: 15px;
   display: flex;

@@ -86,7 +86,7 @@ th {
 .tManage .completed {
   background-color: rgb(245, 149, 149);
 }
-.tManage .toStart {
+.tManage .scheduled {
   background-color: rgb(248, 218, 83);
 }
 .tMTable .iconButton {
