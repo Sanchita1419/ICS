@@ -15,6 +15,7 @@ import ReportsPage from "./pages/ReportsPage";
 import SubscriptionPage from "./pages/SubscriptionPage";
 import VisualizePage from "./pages/VisualizePage";
 import VisAdminPage from "./pages/VisAdminPage";
+import EditTripPage from "./pages/EditTripPage";
 
 function App() {
   const token = useSelector((state) => state.auth.token);
@@ -29,6 +30,8 @@ function App() {
         <Route exact path="/manage/driver/:id" element={<EditDriverPage />} />
         {/* <Route path="/manage/vehicle" element={<AddVehiclePage />} /> */}
         <Route path="/manage/vehicle/:id" element={<EditVehiclePage />} />
+        <Route path="/manage/trip/:id" element={<EditTripPage />} />
+
         <Route path="/manage-admin" element={<ManageAdminPage />} />
 
         <Route

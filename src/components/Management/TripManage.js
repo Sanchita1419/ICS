@@ -133,8 +133,8 @@ const TripManage = () => {
               </thead>
               <tbody>
                 {tripData.map((t) => (
-                  <tr key={slNo}>
-                    <td>{slNo}</td>
+                  <tr key={t.slNo}>
+                    <td>{t.slNo}</td>
                     <td>{t.TripID}</td>
                     <td>{t.Veh_Reg_No}</td>
                     <td>
@@ -145,8 +145,24 @@ const TripManage = () => {
                         </>
                       ))}
                     </td>
-                    <td>{t.PlannedStartTime}</td>
-                    <td>{t.PlannedEndTime}</td>
+                    <td>
+                      {t.PlannedStartTime.map((t) => (
+                        <>
+                          <span>{t}</span>
+                          <br />
+                        </>
+                      ))}
+                    </td>
+                    <td>
+                      {t.PlannedEndTime.map((t) => (
+                        <>
+                          <span>{t}</span>
+                          <br />
+                        </>
+                      ))}
+                    </td>
+                    {/* <td>{t.PlannedStartTime}</td>
+                    <td>{t.PlannedEndTime}</td> */}
                     <td>
                       {t.TripStatus.toLowerCase() === "ongoing" && (
                         <button
