@@ -67,9 +67,20 @@ const TripManage = () => {
   };
 
   /** Delete a trip */
-  // const deleteTripHandler = (id) => {
-  //   const trips = TripData.filter((t) => t.tripId === id);
-  // };
+  const deleteTripHandler = async (id) => {
+    console.log(id);
+    //const trips = TripData.filter((t) => t.tripId === id);
+
+    if (window.confirm("Are you sure want to delete this trip?")) {
+      const response = await axiosInstance.delete("/trip", {
+        data: { id: id },
+      });
+      console.log(response);
+      alert(response.data.message);
+      window.location.reload();
+    } else {
+    }
+  };
 
   /** Search a trip */
   const searchHandler = (e) => {
@@ -140,7 +151,7 @@ const TripManage = () => {
                     <td>
                       {t.DriverID.map((d) => (
                         <>
-                          <span>{d}</span>
+                          <span>{d === null ? "-" : d}</span>
                           <br />
                         </>
                       ))}
@@ -185,9 +196,16 @@ const TripManage = () => {
                           Scheduled
                         </button>
                       )}
+                      {t.TripStatus.toLowerCase() === "cancelled" && (
+                        <button
+                          className={`${classes.statusButton} ${classes.cancelled}`}
+                        >
+                          Cancelled
+                        </button>
+                      )}
                     </td>
                     <td>
-                      <Link to={`/manage/trip/${t.TripId}}`}>
+                      <Link to={`/manage/trip/${t.TripID}`}>
                         <button
                           style={{ color: "#114a62" }}
                           className={classes.iconButton}
@@ -195,11 +213,10 @@ const TripManage = () => {
                           <EditRoundedIcon />
                         </button>
                       </Link>
-
                       <button
                         style={{ color: "#DC0000" }}
                         className={classes.iconButton}
-                        // onClick={() => deleteTripHandler(t.tripId)}
+                        onClick={() => deleteTripHandler(t.TripID)}
                       >
                         <DeleteRoundedIcon />
                       </button>

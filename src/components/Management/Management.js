@@ -8,8 +8,8 @@ import DriverManage from "./DriverManage";
 import TripManage from "./TripManage";
 
 const Management = () => {
-  const [container, setContainer] = useState("vehicle");
-  const [active, setActive] = useState("item1");
+  const [container, setContainer] = useState("trip");
+  const [active, setActive] = useState("item3");
   const handleVehicle = () => {
     setContainer("vehicle");
   };

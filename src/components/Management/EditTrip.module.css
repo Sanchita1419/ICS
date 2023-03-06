@@ -60,3 +60,12 @@ input::-webkit-inner-spin-button {
 .selectBox {
   margin: 0 15px;
 }
+.editTrip .inputRadio {
+  margin: 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.editTrip .inputRadioOption {
+  display: flex;
+  justify-content: left;
+}

@@ -53,12 +53,12 @@
 .selectBox {
   margin: 0 15px;
 }
-.inputRadio {
+.editCustomer .inputRadio {
   margin: 0 15px;
   display: flex;
   justify-content: space-between;
 }
-.inputRadioOption {
+.editCustomer .inputRadioOption {
   display: flex;
   justify-content: left;
 }

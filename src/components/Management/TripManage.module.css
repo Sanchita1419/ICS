@@ -71,7 +71,7 @@ th {
   color: white;
 }
 .tManage tbody tr {
-  height: 60px;
+  height: 65px;
   border-bottom: 1px solid #e3f1d5;
 }
 .tManage .statusButton {
@@ -84,10 +84,13 @@ th {
   background-color: rgb(108, 250, 108);
 }
 .tManage .completed {
-  background-color: rgb(245, 149, 149);
+  background-color: rgb(132, 197, 250);
 }
 .tManage .scheduled {
   background-color: rgb(248, 218, 83);
+}
+.tManage .cancelled {
+  background-color: rgb(245, 149, 149);
 }
 .tMTable .iconButton {
   height: 30px;

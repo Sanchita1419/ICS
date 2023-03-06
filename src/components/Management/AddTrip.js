@@ -44,8 +44,8 @@ const AddTrip = (props) => {
     const url =
       "https://2x8710joc3.execute-api.ap-south-1.amazonaws.com/addtrip";
     const newTripData = {
-      PlannedStartTime: enteredstartTime + ":00",
-      PlannedEndTime: enteredendTime + ":00",
+      PlannedStartTime: enteredstartTime,
+      PlannedEndTime: enteredendTime,
       Veh_Reg_No: enteredvehicleRegNo,
       CustomerID: parseInt(enteredcustomerId),
       TripStatus: "Scheduled",
@@ -111,6 +111,7 @@ const AddTrip = (props) => {
     driversInputRef3.current.value = null;
     startTimeInputRef.current.value = "";
     endTimeInputRef.current.value = "";
+    navigate("/manage");
   };
   // const options = [
   //   { value: 1, label: "1" },
