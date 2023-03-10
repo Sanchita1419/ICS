@@ -48,6 +48,8 @@
 }
 .vMTable {
   margin-top: 25px;
+  overflow: scroll;
+  height: 70vh;
 }
 .vMTable table {
   border-spacing: 1;
@@ -63,13 +65,23 @@
 th {
   padding-left: 8px;
 }
-
+.vMTable thead tr {
+  position: sticky;
+  top: 0px;
+}
 .vManage thead tr {
   height: 60px;
   background: #114a62;
+
   font-size: 16px;
   color: white;
+  z-index: 5;
 }
+/* .vManage tbody,
+thead {
+  display: block;
+} */
+
 .vManage tbody tr {
   height: 48px;
   border-bottom: 1px solid #e3f1d5;
@@ -80,11 +92,14 @@ th {
   color: #455e60;
   border-radius: 8px;
 }
-.vManage .suspend {
+.vManage .suspended {
   background-color: rgb(245, 149, 149);
 }
-.vManage .active {
+.vManage .inService {
   background-color: rgb(108, 250, 108);
+}
+.vManage .outOfService {
+  background-color: rgb(132, 197, 250);
 }
 .vMTable .iconButton {
   height: 30px;

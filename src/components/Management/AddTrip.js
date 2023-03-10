@@ -62,7 +62,7 @@ const AddTrip = (props) => {
     const response = await axiosInstance.post("/trip", newTripData);
     console.log(response.data.message);
     alert(response.data.message);
-
+    window.location.reload();
     // try {
     //   const response = await fetch(url, {
     //     mode: "no-cors",
@@ -111,7 +111,6 @@ const AddTrip = (props) => {
     driversInputRef3.current.value = null;
     startTimeInputRef.current.value = "";
     endTimeInputRef.current.value = "";
-    navigate("/manage");
   };
   // const options = [
   //   { value: 1, label: "1" },
@@ -145,18 +144,14 @@ const AddTrip = (props) => {
         <form onSubmit={addTripHandler}>
           <div className={classes.inputBox}>
             <label>Customer Id</label>
-            <input
-              type="number"
-              name="customerId"
-              ref={customerIdInputRef}
-              required
-            />
+            <input type="number" name="customerId" defaultValue={3} disabled />
           </div>
           <div className={classes.inputBox}>
             <label>Customer Name</label>
             <input
               type="text"
               name="customerName"
+              defaultValue={"Uber"}
               ref={customerNameInputRef}
               required
             />

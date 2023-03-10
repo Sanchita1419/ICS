@@ -48,6 +48,8 @@
 }
 .tMTable {
   margin-top: 25px;
+  overflow: auto;
+  height: 70vh;
 }
 .tMTable table {
   border-spacing: 1;
@@ -55,22 +57,36 @@
   background: white;
   border-radius: 10px;
   overflow: hidden;
-  width: 100%;
+  width: 75vw;
   margin: 0 auto;
   position: relative;
+}
+.tMTable tbody {
+  overflow: auto;
+  height: 70vh;
 }
 .tManage td,
 th {
   padding-left: 8px;
 }
-
+.tMTable thead tr {
+  position: sticky;
+  top: 0px;
+}
 .tManage thead tr {
   height: 60px;
   background: #114a62;
   font-size: 16px;
   color: white;
+  /* display: block; */
 }
+/* .tManage tbody {
+  height: 100px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+} */
 .tManage tbody tr {
+  /* display: block; */
   height: 65px;
   border-bottom: 1px solid #e3f1d5;
 }

@@ -1,0 +1,73 @@
+.editVehicle {
+}
+
+.editVehicle h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 5px 0;
+}
+.editVehicle form {
+  margin: 15px;
+}
+.editVehicle form input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.editVehicle form input[type="number"] {
+  -moz-appearance: textfield;
+  /* Firefox */
+}
+.editVehicle form .buttonContainer {
+  margin: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.editVehicle form .buttonContainer button {
+  padding: 10px 15px;
+  width: 100px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #114a62;
+  color: white;
+  cursor: pointer;
+}
+.editVehicle form .buttonContainer button:hover {
+  transform: scale(1.05);
+}
+.inputBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 5px 15px;
+  /* display: flex;
+  flex-direction: column;
+  height: 20px;
+  width: 70%; */
+}
+.inputBox input {
+  margin: 5px 0;
+  padding: 8px;
+  background-color: rgb(219, 219, 219);
+  border-radius: 10px;
+  border: none;
+  color: #114a62;
+}
+.inputBox input:focus {
+  outline: none;
+}
+.selectBox {
+  margin: 0 15px;
+}
+.editVehicle .inputRadio {
+  margin: 0 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.editVehicle .inputRadioOption {
+  display: flex;
+  justify-content: left;
+  margin-bottom: 4px;
+}

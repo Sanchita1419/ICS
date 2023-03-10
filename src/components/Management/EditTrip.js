@@ -17,7 +17,7 @@ const EditTrip = (props) => {
     };
     fetchTrip(tripId);
   }, [tripId]);
-
+  //console.log(tripData.TripStatus.toLowerCase());
   // const [tripData, setTripData] = useState({
   //   TripID: 102,
   //   PlannedStartTime: ["Mon Nov 16 2020", "10:34:45"],
@@ -108,15 +108,24 @@ const EditTrip = (props) => {
   return (
     <>
       {Object.keys(tripData).length === 0 ? (
-        <ClipLoader
-          color="#114a62"
-          loading
-          cssOverride={{ textAlign: "center" }}
-          size={150}
-          speedMultiplier={0.5}
-          // aria-label="Loading Spinner"
-          // data-testid="loader"
-        />
+        <div
+          style={{
+            position: "fixed",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+          }}
+        >
+          <ClipLoader
+            color="#114a62"
+            loading
+            cssOverride={{ textAlign: "center" }}
+            size={150}
+            speedMultiplier={0.5}
+            // aria-label="Loading Spinner"
+            // data-testid="loader"
+          />
+        </div>
       ) : (
         <Modal onClose={props.onClose}>
           <div className={classes.editTrip}>
@@ -131,7 +140,7 @@ const EditTrip = (props) => {
                   // onChange={customerIdChangeHandler}
                 />
               </div> */}
-              <div className={classes.inputBox}>
+              {/* <div className={classes.inputBox}>
                 <label>Customer Name</label>
                 <input
                   type="text"
@@ -142,7 +151,7 @@ const EditTrip = (props) => {
                   required
                   disabled
                 />
-              </div>
+              </div> */}
               <div className={classes.inputBox}>
                 <label>Vehicle Reg No</label>
                 <input

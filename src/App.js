@@ -22,18 +22,16 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={token ? <DashboardPage /> : <LoginPage />} />
+        {/* <Route path="/" element={token ? <DashboardPage /> : <LoginPage />} /> */}
+        <Route path="/" element={token ? <ManagementPage /> : <LoginPage />} />
+
         <Route path="/visualize" element={<VisualizePage />} />
         <Route path="/visualize-admin" element={<VisAdminPage />} />
         <Route path="/manage" element={<ManagementPage />} />
-        {/* <Route path="/manage/driver" element={<AddDriverPage />} /> */}
         <Route exact path="/manage/driver/:id" element={<EditDriverPage />} />
-        {/* <Route path="/manage/vehicle" element={<AddVehiclePage />} /> */}
         <Route path="/manage/vehicle/:id" element={<EditVehiclePage />} />
         <Route path="/manage/trip/:id" element={<EditTripPage />} />
-
         <Route path="/manage-admin" element={<ManageAdminPage />} />
-
         <Route
           path="/manage-admin/customer/:id"
           element={<EditCustomerPage />}

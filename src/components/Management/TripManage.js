@@ -39,25 +39,22 @@ import { axiosInstance } from "../../config";
 const TripManage = () => {
   const [tripData, setTripData] = useState([]);
   // const [filteredData, setFilteredData] = useState(TripData);
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState();
   const [showAddForm, setShowAddForm] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   let slNo = 0;
 
-  //const navigate = useNavigate();
-
   /** Get all trip details */
   useEffect(() => {
     const getTrip = async () => {
       const response = await axiosInstance.get("/trip");
-      console.log(response.data);
       setTripData(response.data);
       setIsLoading(false);
     };
     getTrip();
   }, []);
-
+  const [filteredData, setFilteredData] = useState(tripData);
   /** Show or add form */
   const handleAddTrip = () => {
     setShowAddForm(true);
@@ -84,8 +81,15 @@ const TripManage = () => {
 
   /** Search a trip */
   const searchHandler = (e) => {
+    e.preventDefault();
     setSearchValue(e.target.value);
   };
+  useEffect(() => {
+    const filteredTrips = tripData.filter(
+      (value) => value.TripID === searchValue
+    );
+    setFilteredData(filteredTrips);
+  }, [searchValue, tripData]);
 
   // useEffect(() => {
   //   const filteredTrips = TripData.filter((value) =>
@@ -135,7 +139,7 @@ const TripManage = () => {
                   <th>Sl No.</th>
                   <th>Trip Id</th>
                   <th>Vehicle Reg No.</th>
-                  <th>Driver Id</th>
+                  <th>Driver Names</th>
                   <th>Start Time</th>
                   <th>End Time</th>
                   <th>Status</th>
@@ -144,7 +148,7 @@ const TripManage = () => {
               </thead>
               <tbody>
                 {tripData.map((t) => (
-                  <tr key={t.slNo}>
+                  <tr key={t.TripID}>
                     <td>{t.slNo}</td>
                     <td>{t.TripID}</td>
                     <td>{t.Veh_Reg_No}</td>

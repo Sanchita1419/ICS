@@ -47,3 +47,11 @@
 .inputBox input:focus {
   outline: none;
 }
+.errorText {
+  color: #b40e0e;
+  margin: 0;
+  font-size: 0.9rem;
+}
+.selectBox {
+  margin: 0 15px;
+}
